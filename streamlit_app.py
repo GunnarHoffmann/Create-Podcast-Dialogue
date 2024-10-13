@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Title for the app
-st.title("Simple Dialog App")
+st.title("Generate a Podcast style dialogue")
 
 # Input text box with label "Dialog"
 user_input = st.text_input("Dialog", "")
