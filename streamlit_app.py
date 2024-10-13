@@ -21,6 +21,8 @@ credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCO
 # Initialize Text-to-Speech client with the loaded credentials
 client = texttospeech.TextToSpeechClient(credentials=credentials)
 
+# Print loaded credentials to debug
+st.write(f"Using credentials from: {credentials.service_account_email}")
 
 # Define the text inputs in an array
 texts = [
