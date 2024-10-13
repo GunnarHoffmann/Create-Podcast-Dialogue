@@ -72,7 +72,34 @@ def synthesize_text(text, speaker_name, output_filename):
         out.write(response.audio_content)
         print(f'Audio content written to {output_filename}')
 
+def concatenate_audios(file_list, output_file):
+    # Load the first audio file
+    combined_audio = AudioSegment.from_mp3(file_list[0])
+
+    # Concatenate the rest of the audio files
+    for file in file_list[1:]:
+        next_audio = AudioSegment.from_mp3(file)
+        combined_audio += next_audio  # Concatenates the audio segments
+
+    # Export the combined audio
+    combined_audio.export(output_file, format="mp3")
+    print(f"Combined audio saved as {output_file}")
+
+
 # Processing the input by concatenating "_END"
 if user_input:
     output = user_input + "_END"
     st.write("Output:", output)
+    # Iterate through the text array and synthesize audio based on index
+    for index, text in enumerate(texts):
+        if index % 2 == 0:
+            # Even index, use Speaker 1
+            output_filename = f"output_speaker1_{index}.mp3"
+            synthesize_text(text, voice1, output_filename)
+        else:
+            # Odd index, use Speaker 2
+            output_filename = f"output_speaker2_{index}.mp3"
+            synthesize_text(text, voice2, output_filename)
+
+        # Add each generated file to the list for concatenation
+        audio_files.append(output_filename)
