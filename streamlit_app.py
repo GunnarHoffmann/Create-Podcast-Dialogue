@@ -115,6 +115,12 @@ if user_input:
         
 
     st.write(audio_files)
+
+    from pydub.utils import which
+    if which("ffmpeg") is not None:
+        st.write("ffmpeg is installed.")
+    else:
+        st.write("ffmpeg is not installed or not in PATH.")
     
     # Concatenate all the generated audio files
     output_combined_file = "combined_output.mp3"
