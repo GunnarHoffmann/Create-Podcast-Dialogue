@@ -70,7 +70,7 @@ def concatenate_audios(file_list, output_file):
     combined_audio.export(output_file, format="mp3")
     print(f"Combined audio saved as {output_file}")
 
-synthesize_text("['hello','hi']", voice1, output_filename)
+synthesize_text("['hello','hi']", voice1, "testoutput.mp3")
 
 # Processing the input by concatenating "_END"
 if user_input:
