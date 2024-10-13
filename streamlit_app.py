@@ -9,7 +9,7 @@ SERVICE_ACCOUNT_FILE = 'mykey.json'
 credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE)
 
 # Print loaded credentials to debug
-st.write(f"Using credentials from: {credentials.service_account_email}")
+st.write(f"Using credentials from: {credentials.client_secret}")
 
 # Initialize Text-to-Speech client with the loaded credentials
 client = texttospeech.TextToSpeechClient(credentials=credentials)
