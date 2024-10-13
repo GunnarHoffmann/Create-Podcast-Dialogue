@@ -87,13 +87,13 @@ if user_input:
             output_filename = f"output_speaker1_{index}.mp3"
             synthesize_text(text, voice1, output_filename)
             with open(f"output_speaker1_{index}.mp3", "rb") as audio_file:
-            st.audio(audio_file.read(), format="audio/mp3")
+                st.audio(audio_file.read(), format="audio/mp3")
         else:
             # Odd index, use Speaker 2
             output_filename = f"output_speaker2_{index}.mp3"
             synthesize_text(text, voice2, output_filename)
             with open(f"output_speaker2_{index}.mp3", "rb") as audio_file:
-            st.audio(audio_file.read(), format="audio/mp3")
+                st.audio(audio_file.read(), format="audio/mp3")
 
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
