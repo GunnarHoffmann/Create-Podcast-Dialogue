@@ -91,23 +91,30 @@ def concatenate_audios(file_list, output_file):
 # Processing the input by concatenating "_END"
 if user_input:
     # Iterate through the text array and synthesize audio based on index
-    inputarray = json.loads(user_input)
-    for index, text in enumerate(inputarray):
-        if index % 2 == 0:
-            # Even index, use Speaker 1
-            output_filename = f"output_speaker1_{index}.mp3"
-            synthesize_text(text, voice1, output_filename)
-            #with open(f"output_speaker1_{index}.mp3", "rb") as audio_file:
-            #    st.audio(audio_file.read(), format="audio/mp3")
-        else:
-            # Odd index, use Speaker 2
-            output_filename = f"output_speaker2_{index}.mp3"
-            synthesize_text(text, voice2, output_filename)
-            #with open(f"output_speaker2_{index}.mp3", "rb") as audio_file:
-            #    st.audio(audio_file.read(), format="audio/mp3")
-
-        # Add each generated file to the list for concatenation
-        audio_files.append(output_filename)
+    try:
+        data = json.loads(json_string)
+        inputarray = json.loads(user_input)
+     
+    
+    
+        for index, text in enumerate(inputarray):
+            if index % 2 == 0:
+                # Even index, use Speaker 1
+                output_filename = f"output_speaker1_{index}.mp3"
+                synthesize_text(text, voice1, output_filename)
+                #with open(f"output_speaker1_{index}.mp3", "rb") as audio_file:
+                #    st.audio(audio_file.read(), format="audio/mp3")
+            else:
+                # Odd index, use Speaker 2
+                output_filename = f"output_speaker2_{index}.mp3"
+                synthesize_text(text, voice2, output_filename)
+                #with open(f"output_speaker2_{index}.mp3", "rb") as audio_file:
+                #    st.audio(audio_file.read(), format="audio/mp3")
+    
+            # Add each generated file to the list for concatenation
+            audio_files.append(output_filename)
+        except json.JSONDecodeError as e:
+            st.write(f"Error decoding input.")
 
     
     # Debug: generated files
