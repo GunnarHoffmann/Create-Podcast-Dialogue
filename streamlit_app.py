@@ -14,7 +14,7 @@ user_input = st.text_area("Text input:", '''[
     "Yes, the numbers are impressive! Revenue has increased by 15%.",   
     "Exactly, and that's mainly due to rising revenues from renewable energies.",  
     "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
-    "Absolutely, I'm curious to see how this will develop in the coming years!",   
+    "Absolutely, I'm curious to see how this will develop in the coming years!"   
 ]''', height=200)
 
 # Define the speaker voices (you can use different voices for different speakers)
