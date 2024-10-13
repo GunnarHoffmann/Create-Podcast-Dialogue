@@ -66,8 +66,6 @@ def synthesize_text(text, speaker_name, output_filename):
         out.write(response.audio_content)
         print(f'Audio content written to {output_filename}')
        
-    
-
 def concatenate_audios(file_list, output_file):
     # Load the first audio file
     
@@ -105,13 +103,15 @@ if user_input:
         audio_files.append(output_filename)
 
     
-    st.write(audio_files)
+    # Debug: generated files
+    # st.write(audio_files)
 
-    from pydub.utils import which
-    if which("ffmpeg") is not None:
-        st.write("ffmpeg is installed.")
-    else:
-        st.write("ffmpeg is not installed or not in PATH.")
+    # Debug information
+    # from pydub.utils import which
+    # if which("ffmpeg") is not None:
+    #    st.write("ffmpeg is installed.")
+    # else:
+    #    st.write("ffmpeg is not installed or not in PATH.")
     
     # Concatenate all the generated audio files
     output_combined_file = "combined_output.mp3"
@@ -119,4 +119,5 @@ if user_input:
     
     # After saving the audio file "test3.mp3"
     with open("combined_output.mp3", "rb") as audio_file:
+        st.write("Full dialogue:")
         st.audio(audio_file.read(), format="audio/mp3")
