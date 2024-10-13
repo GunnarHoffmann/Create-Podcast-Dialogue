@@ -5,7 +5,7 @@ from google.oauth2 import service_account
 mykey = st.secrets["mykey"]
 
 # Print loaded credentials to debug
-st.write(f"Using credentials from: {mykey}")
+#st.write(f"Using credentials from: {mykey}")
 
 # Initialize Text-to-Speech client with the loaded credentials
 client = texttospeech.TextToSpeechClient(credentials=credentials)
