@@ -1,4 +1,6 @@
 import streamlit as st
+from google.oauth2 import service_account
+from google.cloud import texttospeech
 
 # Title for the app
 st.title("Generate a Podcast style dialogue")
@@ -10,7 +12,7 @@ user_input = st.text_area("Dialog", "", height=200)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
 
-from google.cloud import texttospeech
+
 
 # Path to your service account key file
 SERVICE_ACCOUNT_FILE = 'mykey.json'
