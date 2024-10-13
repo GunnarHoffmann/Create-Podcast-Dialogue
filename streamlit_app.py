@@ -6,6 +6,10 @@ st.title("Generate a Podcast style dialogue")
 # Input text box with label "Dialog"
 user_input = st.text_area("Dialog", "", height=200)
 
+# Define the speaker voices (you can use different voices for different speakers)
+voice1 = "en-US-Journey-D"
+voice2 = "en-US-Journey-F"
+
 mykey = r"""{
   "type": "service_account",
   "project_id": "prj-mygcpproject-219-8a4e",
