@@ -113,7 +113,7 @@ if user_input:
     
             # Add each generated file to the list for concatenation
             audio_files.append(output_filename)
-        except json.JSONDecodeError as e:
+        except Exception as e:
             st.write(f"Error decoding input.")
 
     
