@@ -8,7 +8,7 @@ mykey = st.secrets["mykey"]
 #st.write(f"Using credentials from: {mykey}")
 
 # Initialize Text-to-Speech client with the loaded credentials
-client = texttospeech.TextToSpeechClient(credentials=credentials)
+client = texttospeech.TextToSpeechClient(credentials=mykey)
 
 # Function to convert text to speech
 def text_to_speech(text):
