@@ -14,7 +14,7 @@ from google.cloud import texttospeech
 
 # Set the environment variable for authentication
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "\mykey.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "mykey.json"
 
 # Initialize the Text-to-Speech client with the credentials
 client = texttospeech.TextToSpeechClient()
