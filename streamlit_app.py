@@ -51,14 +51,14 @@ def synthesize_text(text, speaker_name, output_filename):
     )
 
     # Perform the text-to-speech request
-    #response = client.synthesize_speech(
-    #    input=input_text, voice=voice, audio_config=audio_config
-    #)
+    response = client.synthesize_speech(
+        input=input_text, voice=voice, audio_config=audio_config
+    )
 
     # Write the response to an MP3 file
-    #with open(output_filename, "wb") as out:
-    #    out.write(response.audio_content)
-    #   print(f'Audio content written to {output_filename}')
+    with open(output_filename, "wb") as out:
+        out.write(response.audio_content)
+        print(f'Audio content written to {output_filename}')
 
 def concatenate_audios(file_list, output_file):
     # Load the first audio file
