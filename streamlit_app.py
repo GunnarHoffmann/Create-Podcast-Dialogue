@@ -76,9 +76,9 @@ def concatenate_audios(file_list, output_file):
     combined_audio = AudioSegment.from_mp3(file_list[0])
 
     # Concatenate the rest of the audio files
-    #for file in file_list[1:]:
-    #    next_audio = AudioSegment.from_mp3(file)
-    #    combined_audio += next_audio  # Concatenates the audio segments
+    for file in file_list[1:]:
+        next_audio = AudioSegment.from_mp3(file)
+        combined_audio += next_audio  # Concatenates the audio segments
 
     # Export the combined audio
     combined_audio.export(output_file, format="mp3")
