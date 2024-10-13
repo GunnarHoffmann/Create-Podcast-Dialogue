@@ -16,7 +16,7 @@ user_input = st.text_area("Text input:", '''[
     "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
     "Absolutely, I'm curious to see how this will develop in the coming years!"   
 ]''', height=200)
-
+st.button("Submit")
 # Define the speaker voices (you can use different voices for different speakers)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
