@@ -1,6 +1,7 @@
 import streamlit as st
 from google.oauth2 import service_account
 from google.cloud import texttospeech
+from pydub import AudioSegment
 
 # Title for the app
 st.title("Generate a Podcast style dialogue")
