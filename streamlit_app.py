@@ -36,26 +36,7 @@ texts = [
 audio_files = []
 
 # Function to convert text to speech
-def text_to_speech(text):
-    synthesis_input = texttospeech.SynthesisInput(text=text)
-
-    voice = texttospeech.VoiceSelectionParams(
-        language_code="en-US",
-        name="en-US-Wavenet-D",
-        ssml_gender=texttospeech.SsmlVoiceGender.MALE,
-    )
-
-    audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3
-    )
-
-    response = client.synthesize_speech(
-        input=synthesis_input, voice=voice, audio_config=audio_config
-    )
-
-    return response.audio_content
-
-def synthesize_text2(text, speaker_name, output_filename):
+def synthesize_text(text, speaker_name, output_filename):
     # Set the text input to be synthesized
     input_text = texttospeech.SynthesisInput(text=text)
 
