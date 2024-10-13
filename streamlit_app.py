@@ -35,7 +35,7 @@ def text_to_speech(text):
     return response.audio_content
 
 # Streamlit app
-st.title("Google Text-to-Speech API Demo")
+st.title("Google Text-to-Speech API Demo2")
 
 input_text = st.text_area("Enter text to convert to speech", "Hello, this is a demo.")
 
