@@ -12,12 +12,15 @@ voice2 = "en-US-Journey-F"
 
 from google.cloud import texttospeech
 
-# Set the environment variable for authentication
-import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "mykey2.json"
+# Path to your service account key file
+SERVICE_ACCOUNT_FILE = 'mykey.json'
 
-# Initialize the Text-to-Speech client with the credentials
-client = texttospeech.TextToSpeechClient()
+# Load credentials directly from the service account key file
+credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE)
+
+# Initialize Text-to-Speech client with the loaded credentials
+client = texttospeech.TextToSpeechClient(credentials=credentials)
+
 
 # Define the text inputs in an array
 texts = [
