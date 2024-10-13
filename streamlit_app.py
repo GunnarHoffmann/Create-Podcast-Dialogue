@@ -13,13 +13,17 @@ user_input = st.text_area("Dialog", "", height=200)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
 
-mykey = st.secrets["mykey"]
+credentials_json = st.secrets["mykey"]
+
+# Convert the string into a file-like object
+credentials_info = json.loads(credentials_json)
+credentials = service_account.Credentials.from_service_account_info(credentials_info)
 
 # Print loaded credentials to debug
 # st.write(f"Using credentials from: {mykey}")
 
 # Initialize Text-to-Speech client with the loaded credentials
-client = texttospeech.TextToSpeechClient(credentials=mykey)
+client = texttospeech.TextToSpeechClient(credentials=credentials)
 
 # Define the text inputs in an array
 texts = [
