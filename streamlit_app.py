@@ -51,9 +51,9 @@ def synthesize_text(text, speaker_name, output_filename):
     )
 
     # Perform the text-to-speech request
-    response = client.synthesize_speech(
-        input=input_text, voice=voice, audio_config=audio_config
-    )
+    #response = client.synthesize_speech(
+    #    input=input_text, voice=voice, audio_config=audio_config
+    #)
 
     # Write the response to an MP3 file
     #with open(output_filename, "wb") as out:
