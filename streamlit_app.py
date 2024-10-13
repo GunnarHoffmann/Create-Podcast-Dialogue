@@ -147,7 +147,7 @@ impressum_html = """
     }
     </style>
     <div class="impressum">
-        <p>Impressum: GH, 13.10.2024</p>
+        <p>GH, 13.10.2024</p>
     </div>
     """
 
