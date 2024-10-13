@@ -61,24 +61,19 @@ def synthesize_text(text, speaker_name, output_filename):
         input=input_text, voice=voice, audio_config=audio_config
     )
 
- 
     # Write the response to an MP3 file
     with open(output_filename, "wb") as out:
         out.write(response.audio_content)
         print(f'Audio content written to {output_filename}')
        
-    combined_audio = AudioSegment.from_mp3(output_filename)
-
+    
 
 def concatenate_audios(file_list, output_file):
     # Load the first audio file
     
-    # Get the absolute path of the current directory
-    current_directory = os.getcwd()
-
     # Create the full path to the file
-    file_path = os.path.join(current_directory, file_list[0])
-    combined_audio = AudioSegment.from_mp3(file_path)
+    
+    combined_audio = AudioSegment.from_mp3(file_list[0])
 
     # Concatenate the rest of the audio files
     #for file in file_list[1:]:
@@ -109,8 +104,7 @@ if user_input:
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
 
-        
-
+    
     st.write(audio_files)
 
     from pydub.utils import which
@@ -121,8 +115,8 @@ if user_input:
     
     # Concatenate all the generated audio files
     output_combined_file = "combined_output.mp3"
-    #concatenate_audios(audio_files, output_combined_file)
+    concatenate_audios(audio_files, output_combined_file)
     
     # After saving the audio file "test3.mp3"
-    #with open("combined_output.mp3", "rb") as audio_file:
-    #    st.audio(audio_file.read(), format="audio/mp3")
+    with open("combined_output.mp3", "rb") as audio_file:
+        st.audio(audio_file.read(), format="audio/mp3")
