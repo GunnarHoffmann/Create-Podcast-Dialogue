@@ -99,5 +99,5 @@ if user_input:
     concatenate_audios(audio_files, output_combined_file)
     
     # After saving the audio file "test3.mp3"
-    with open("combined_output.mp3", "rb") as audio_file:
-        st.audio(audio_file.read(), format="audio/mp3")
+    #with open("combined_output.mp3", "rb") as audio_file:
+    #    st.audio(audio_file.read(), format="audio/mp3")
