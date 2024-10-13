@@ -10,11 +10,6 @@ user_input = st.text_area("Dialog", "", height=200)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
 
-# Open a file in write mode ('w') - this will create the file if it doesn't exist
-with open("mykey.json", "w") as file:
-    # Write the string to the file
-    file.write(mykey)
-
 from google.cloud import texttospeech
 
 # Set the environment variable for authentication
