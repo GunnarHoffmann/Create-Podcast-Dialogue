@@ -1,6 +1,12 @@
 import streamlit as st
 
-st.title("🎈 My new app")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
+# Title for the app
+st.title("Simple Dialog App")
+
+# Input text box with label "Dialog"
+user_input = st.text_input("Dialog", "")
+
+# Processing the input by concatenating "_END"
+if user_input:
+    output = user_input + "_END"
+    st.write("Output:", output)
