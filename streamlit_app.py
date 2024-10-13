@@ -92,11 +92,7 @@ def concatenate_audios(file_list, output_file):
 if user_input:
     # Iterate through the text array and synthesize audio based on index
     try:
-        data = json.loads(json_string)
-        inputarray = json.loads(user_input)
-     
-    
-    
+        inputarray = json.loads(user_input)    
         for index, text in enumerate(inputarray):
             if index % 2 == 0:
                 # Even index, use Speaker 1
