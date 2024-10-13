@@ -80,6 +80,10 @@ def concatenate_audios(file_list, output_file):
 
 synthesize_text("huhu","en-US-Journey-D","test.mp3")
 
+# After saving the audio file "test3.mp3"
+with open("test.mp3", "rb") as audio_file:
+    st.audio(audio_file.read(), format="audio/mp3")
+
 # Processing the input by concatenating "_END"
 if user_input:
     output = user_input + "_END"
