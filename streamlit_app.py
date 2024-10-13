@@ -69,6 +69,9 @@ def synthesize_text(text, speaker_name, output_filename):
     with open(file_path, "wb") as out:
         out.write(response.audio_content)
         print(f'Audio content written to {file_path}')
+       
+        combined_audio = AudioSegment.from_mp3(file_path)
+
 
 def concatenate_audios(file_list, output_file):
     # Load the first audio file
@@ -109,11 +112,7 @@ if user_input:
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
 
-        # Create the full path to the file
-        current_directory = os.getcwd()
-        file_path = os.path.join(current_directory, output_filename)
-        combined_audio = AudioSegment.from_mp3(output_filename)
-
+        
 
     st.write(audio_files)
     
