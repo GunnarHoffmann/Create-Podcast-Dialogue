@@ -147,7 +147,7 @@ impressum_html = """
     }
     </style>
     <div class="impressum">
-        <p>Experimental Streamlit app, Developed 13.10.2024, GH</p>
+        <p>Experimental Streamlit app, developed 13.10.2024, GH</p>
     </div>
     """
 
