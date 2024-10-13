@@ -109,6 +109,16 @@ if user_input:
     
             # Add each generated file to the list for concatenation
             audio_files.append(output_filename)
+    
+    # Concatenate all the generated audio files
+    output_combined_file = "combined_output.mp3"
+    concatenate_audios(audio_files, output_combined_file)
+    
+    # After saving the audio file "combined_output.mp3"
+    with open("combined_output.mp3", "rb") as audio_file:
+        st.write("Full dialogue:")
+        st.audio(audio_file.read(), format="audio/mp3")
+    
     except:
             st.write("Error decoding input.")
 
@@ -123,11 +133,6 @@ if user_input:
     # else:
     #    st.write("ffmpeg is not installed or not in PATH.")
     
-    # Concatenate all the generated audio files
-    output_combined_file = "combined_output.mp3"
-    concatenate_audios(audio_files, output_combined_file)
+  
     
-    # After saving the audio file "test3.mp3"
-    with open("combined_output.mp3", "rb") as audio_file:
-        st.write("Full dialogue:")
-        st.audio(audio_file.read(), format="audio/mp3")
+    
