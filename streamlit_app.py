@@ -3,7 +3,7 @@ from google.cloud import texttospeech
 from google.oauth2 import service_account
 
 # Path to your service account key file
-SERVICE_ACCOUNT_FILE = 'service-account-key.json'
+SERVICE_ACCOUNT_FILE = 'mykey.json'
 
 # Load credentials directly from the service account key file
 credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE)
