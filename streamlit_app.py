@@ -10,11 +10,11 @@ st.title("Generate a Podcast style dialogue")
 
 # Input text box with label "Dialog"
 user_input = st.text_area("Text input:", '''[
-    "Hum, Have you seen the latest reports on Eon's fiscal year 2023?",  # Even index (Speaker 1)
-    "Yes, the numbers are impressive! Revenue has increased by 15%.",     # Odd index (Speaker 2)
-    "Exactly, and that's mainly due to rising revenues from renewable energies.",    # Even index (Speaker 1)
-    "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  # Odd index (Speaker 2)
-    "Absolutely, I'm curious to see how this will develop in the coming years!",    # Even index (Speaker 1)
+    "Hum, Have you seen the latest reports on Eon's fiscal year 2023?", 
+    "Yes, the numbers are impressive! Revenue has increased by 15%.",   
+    "Exactly, and that's mainly due to rising revenues from renewable energies.",  
+    "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
+    "Absolutely, I'm curious to see how this will develop in the coming years!",   
 ]''', height=200)
 
 # Define the speaker voices (you can use different voices for different speakers)
