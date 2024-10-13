@@ -20,9 +20,6 @@ mykey = st.secrets["mykey"]
 # Initialize Text-to-Speech client with the loaded credentials
 client = texttospeech.TextToSpeechClient(credentials=mykey)
 
-# Print loaded credentials to debug
-st.write(f"Using credentials from: {key.service_account_email}")
-
 # Define the text inputs in an array
 texts = [
     "Hum, Have you seen the latest reports on Eon's fiscal year 2023?",  # Even index (Speaker 1)
