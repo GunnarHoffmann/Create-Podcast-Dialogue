@@ -73,7 +73,7 @@ def concatenate_audios(file_list, output_file):
     current_directory = os.getcwd()
 
     # Create the full path to the file
-    file_path = os.path.join(current_directory, "output_speaker1_0.mp3")
+    file_path = os.path.join(current_directory, file_list[0])
     combined_audio = AudioSegment.from_mp3(file_path)
 
     # Concatenate the rest of the audio files
@@ -104,12 +104,14 @@ if user_input:
 
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
+        combined_audio = AudioSegment.from_mp3(output_filename)
+
 
     st.write(audio_files)
     
     # Concatenate all the generated audio files
     output_combined_file = "combined_output.mp3"
-    concatenate_audios(audio_files, output_combined_file)
+    #concatenate_audios(audio_files, output_combined_file)
     
     # After saving the audio file "test3.mp3"
     #with open("combined_output.mp3", "rb") as audio_file:
