@@ -25,6 +25,53 @@ with open("mykey.json", "w") as file:
     # Write the string to the file
     file.write(mykey)
 
+from google.cloud import texttospeech
+
+# Set the environment variable for authentication
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "mykey.json"
+
+# Initialize the Text-to-Speech client with the credentials
+client = texttospeech.TextToSpeechClient()
+
+# Define the text inputs in an array
+texts = [
+    "Hum, Have you seen the latest reports on Eon's fiscal year 2023?",  # Even index (Speaker 1)
+    "Yes, the numbers are impressive! Revenue has increased by 15%.",     # Odd index (Speaker 2)
+    "Exactly, and that's mainly due to rising revenues from renewable energies.",    # Even index (Speaker 1)
+    "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  # Odd index (Speaker 2)
+    "Absolutely, I'm curious to see how this will develop in the coming years!",    # Even index (Speaker 1)
+]
+
+# Store the output filenames to concatenate later
+audio_files = []
+
+def synthesize_text(text, speaker_name, output_filename):
+    # Set the text input to be synthesized
+    input_text = texttospeech.SynthesisInput(text=text)
+
+    # Build the voice request based on the speaker
+    voice = texttospeech.VoiceSelectionParams(
+        language_code="en-US",
+        name=speaker_name,
+        ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
+    )
+
+    # Select the type of audio file you want returned
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3
+    )
+
+    # Perform the text-to-speech request
+    response = client.synthesize_speech(
+        input=input_text, voice=voice, audio_config=audio_config
+    )
+
+    # Write the response to an MP3 file
+    with open(output_filename, "wb") as out:
+        out.write(response.audio_content)
+        print(f'Audio content written to {output_filename}')
+
 # Processing the input by concatenating "_END"
 if user_input:
     output = user_input + "_END"
