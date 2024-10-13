@@ -38,3 +38,5 @@ def text_to_speech(text):
 st.title("Google Text-to-Speech API Demo")
 
 input_text = st.text_area("Enter text to convert to speech", "Hello, this is a demo.")
+
+text_to_speech("huhu")
