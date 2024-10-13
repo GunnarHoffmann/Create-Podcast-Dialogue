@@ -80,12 +80,8 @@ def concatenate_audios(file_list, output_file):
 
 # Processing the input by concatenating "_END"
 if user_input:
-    synthesize_text(user_input,"en-US-Journey-D","test.mp3")
-    # After saving the audio file "test3.mp3"
-    with open("test.mp3", "rb") as audio_file:
-        st.audio(audio_file.read(), format="audio/mp3")
     # Iterate through the text array and synthesize audio based on index
-    for index, text in enumerate(texts):
+    for index, text in enumerate(user_input):
         if index % 2 == 0:
             # Even index, use Speaker 1
             output_filename = f"output_speaker1_{index}.mp3"
@@ -97,3 +93,11 @@ if user_input:
 
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
+
+    # Concatenate all the generated audio files
+    output_combined_file = "combined_output.mp3"
+    concatenate_audios(audio_files, output_combined_file)
+    
+    # After saving the audio file "test3.mp3"
+    with open("combined_output.mp3", "rb") as audio_file:
+        st.audio(audio_file.read(), format="audio/mp3")
