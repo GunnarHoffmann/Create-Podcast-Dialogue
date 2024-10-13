@@ -6,7 +6,7 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 
 # Title for the app
-st.title("Generate a Podcast style dialogue 2")
+st.title("Generate a Podcast style dialogue")
 
 
 # Create a form with a text area and a submit button
