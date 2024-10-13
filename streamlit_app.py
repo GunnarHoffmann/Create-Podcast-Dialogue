@@ -5,7 +5,7 @@ from google.cloud import texttospeech
 from pydub import AudioSegment
 
 # Title for the app
-st.title("Generate a Podcast style dialogue2")
+st.title("Generate a Podcast style dialogue")
 
 # Input text box with label "Dialog"
 user_input = st.text_area("Dialog", "", height=200)
@@ -78,16 +78,12 @@ def concatenate_audios(file_list, output_file):
     combined_audio.export(output_file, format="mp3")
     print(f"Combined audio saved as {output_file}")
 
-synthesize_text("huhu","en-US-Journey-D","test.mp3")
-
-# After saving the audio file "test3.mp3"
-with open("test.mp3", "rb") as audio_file:
-    st.audio(audio_file.read(), format="audio/mp3")
-
 # Processing the input by concatenating "_END"
 if user_input:
-    output = user_input + "_END"
-    st.write("Output:", output)
+    synthesize_text(user_input,"en-US-Journey-D","test.mp3")
+    # After saving the audio file "test3.mp3"
+    with open("test.mp3", "rb") as audio_file:
+        st.audio(audio_file.read(), format="audio/mp3")
     # Iterate through the text array and synthesize audio based on index
     for index, text in enumerate(texts):
         if index % 2 == 0:
