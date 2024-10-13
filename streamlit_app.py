@@ -108,7 +108,11 @@ if user_input:
 
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
-        #combined_audio = AudioSegment.from_mp3(output_filename)
+
+        # Create the full path to the file
+        current_directory = os.getcwd()
+        file_path = os.path.join(current_directory, output_filename)
+        combined_audio = AudioSegment.from_mp3(output_filename)
 
 
     st.write(audio_files)
