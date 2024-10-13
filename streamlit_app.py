@@ -120,7 +120,7 @@ if user_input:
             st.audio(audio_file.read(), format="audio/mp3")
     
     except:
-        st.write("Error decoding input.")
+        st.write('Error decoding input. Please use format as follows: ["Statement 1 Speaker 1", "Statement 1 Speaker 2", "Statement 2 Speaker 1", "Statement 2 Speaker 2"]')
 
     
     # Debug: generated files
