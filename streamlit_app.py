@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import os
 from google.oauth2 import service_account
 from google.cloud import texttospeech
 from pydub import AudioSegment
