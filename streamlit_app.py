@@ -9,7 +9,7 @@ from pydub import AudioSegment
 st.title("Generate a Podcast style dialogue")
 
 # Input text box with label "Dialog"
-user_input = st.text_area("Dialog", "", height=200)
+user_input = st.text_area("Dialog", "BLABLA", height=200)
 
 # Define the speaker voices (you can use different voices for different speakers)
 voice1 = "en-US-Journey-D"
