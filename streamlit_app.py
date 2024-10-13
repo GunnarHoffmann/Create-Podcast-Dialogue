@@ -56,9 +56,9 @@ def synthesize_text(text, speaker_name, output_filename):
     )
 
     # Write the response to an MP3 file
-    with open(output_filename, "wb") as out:
-        out.write(response.audio_content)
-        print(f'Audio content written to {output_filename}')
+    #with open(output_filename, "wb") as out:
+    #    out.write(response.audio_content)
+    #   print(f'Audio content written to {output_filename}')
 
 def concatenate_audios(file_list, output_file):
     # Load the first audio file
