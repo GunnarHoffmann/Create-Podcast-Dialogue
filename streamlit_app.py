@@ -15,7 +15,7 @@ voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
 
 credentials_json = st.secrets["mykey"]
-st.write(credentials_json)
+# st.write(credentials_json)
 # Convert the string into a file-like object
 credentials_info = json.loads(credentials_json)
 credentials = service_account.Credentials.from_service_account_info(credentials_info)
