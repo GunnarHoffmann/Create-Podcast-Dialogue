@@ -65,7 +65,7 @@ def synthesize_text(text, speaker_name, output_filename):
     # Write the response to an MP3 file
     # Create the full path to the file
     current_directory = os.getcwd()
-    file_path = os.path.join(current_directory, output_filename)
+    file_path = os.path.join("/tmp", output_filename)
     with open(file_path, "wb") as out:
         out.write(response.audio_content)
         print(f'Audio content written to {file_path}')
