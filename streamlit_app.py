@@ -110,17 +110,17 @@ if user_input:
             # Add each generated file to the list for concatenation
             audio_files.append(output_filename)
     
-    # Concatenate all the generated audio files
-    output_combined_file = "combined_output.mp3"
-    concatenate_audios(audio_files, output_combined_file)
+        # Concatenate all the generated audio files
+        output_combined_file = "combined_output.mp3"
+        concatenate_audios(audio_files, output_combined_file)
     
-    # After saving the audio file "combined_output.mp3"
-    with open("combined_output.mp3", "rb") as audio_file:
-        st.write("Full dialogue:")
-        st.audio(audio_file.read(), format="audio/mp3")
+        # After saving the audio file "combined_output.mp3"
+        with open("combined_output.mp3", "rb") as audio_file:
+            st.write("Full dialogue:")
+            st.audio(audio_file.read(), format="audio/mp3")
     
     except:
-            st.write("Error decoding input.")
+        st.write("Error decoding input.")
 
     
     # Debug: generated files
