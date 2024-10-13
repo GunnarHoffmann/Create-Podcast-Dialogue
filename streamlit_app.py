@@ -12,17 +12,16 @@ user_input = st.text_area("Dialog", "", height=200)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
 
-# Path to your service account key file
-SERVICE_ACCOUNT_FILE = 'mykey.json'
-
-# Load credentials directly from the service account key file
-credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE)
-
-# Initialize Text-to-Speech client with the loaded credentials
-client = texttospeech.TextToSpeechClient(credentials=credentials)
+mykey = st.secrets["mykey"]
 
 # Print loaded credentials to debug
-st.write(f"Using credentials from: {credentials.service_account_email}")
+# st.write(f"Using credentials from: {mykey}")
+
+# Initialize Text-to-Speech client with the loaded credentials
+client = texttospeech.TextToSpeechClient(credentials=mykey)
+
+# Print loaded credentials to debug
+st.write(f"Using credentials from: {key.service_account_email}")
 
 # Define the text inputs in an array
 texts = [
