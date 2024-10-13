@@ -133,7 +133,26 @@ if user_input:
     #    st.write("ffmpeg is installed.")
     # else:
     #    st.write("ffmpeg is not installed or not in PATH.")
-    
+
+impressum_html = """
+    <style>
+    .impressum {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: lightgray;
+        text-align: center;
+        padding: 10px;
+    }
+    </style>
+    <div class="impressum">
+        <p>Impressum: GH, 13.10.2024</p>
+    </div>
+    """
+
+# Display the Impressum
+st.markdown(impressum_html, unsafe_allow_html=True)
   
     
     
