@@ -74,7 +74,7 @@ def concatenate_audios(file_list, output_file):
 
     # Create the full path to the file
     file_path = os.path.join(current_directory, "output_speaker1_0.mp3")
-    combined_audio = AudioSegment.from_mp3(filepath)
+    combined_audio = AudioSegment.from_mp3(file_path)
 
     # Concatenate the rest of the audio files
     #for file in file_list[1:]:
