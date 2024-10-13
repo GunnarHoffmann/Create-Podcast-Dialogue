@@ -67,7 +67,7 @@ def synthesize_text(text, speaker_name, output_filename):
         out.write(response.audio_content)
         print(f'Audio content written to {output_filename}')
        
-    #combined_audio = AudioSegment.from_mp3(output_filename)
+    combined_audio = AudioSegment.from_mp3(output_filename)
 
 
 def concatenate_audios(file_list, output_file):
