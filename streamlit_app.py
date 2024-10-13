@@ -98,6 +98,8 @@ if user_input:
         # Add each generated file to the list for concatenation
         audio_files.append(output_filename)
 
+    st.write(audio_files)
+    
     # Concatenate all the generated audio files
     output_combined_file = "combined_output.mp3"
     concatenate_audios(audio_files, output_combined_file)
