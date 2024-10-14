@@ -5,9 +5,11 @@ from google.oauth2 import service_account
 from google.cloud import texttospeech
 from pydub import AudioSegment
 
+
+st.image("brainlogo.png",width=100)
 # Title for the app
 st.title("Generate a Podcast style dialogue")
-st.image("brainlogo.png")
+
 
 # Create a form with a text area and a submit button
 with st.form(key='text_area_form'):
