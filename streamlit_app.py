@@ -36,7 +36,7 @@ with st.form(key='text_area_form'):
     "Hm, Have you seen the latest reports on Eon's fiscal year 2023?", 
     "Yes, the numbers are impressive! Revenue has increased by 15%.",   
     "Exactly, and that's mainly due to rising revenues from renewable energies.",  
-    "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
+    "Welll, that's really exciting! Eon seems to be adapting effectively to the shift towards green energy.",  
     "Absolutely, I'm curious to see how this will develop in the coming years!"   
 ]''', height=200)
 
