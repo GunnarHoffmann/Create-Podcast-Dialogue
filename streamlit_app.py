@@ -25,8 +25,8 @@ with st.form(key='text_area_form'):
     #('option 1', 'option 2')
     #)
     
-# Submit button
-submit_button = st.form_submit_button(label='Submit')
+    # Submit button
+    submit_button = st.form_submit_button(label='Submit')
 
 # Define the speaker voices (you can use different voices for different speakers)
 voice1 = "en-US-Journey-D"
