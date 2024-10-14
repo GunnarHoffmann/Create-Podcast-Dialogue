@@ -30,6 +30,18 @@ with st.form(key='text_area_form'):
         voice1 = 'en-US-Journey-D'
     elif voice1selected == 'en-US-Journey-F (female)':
         voice1 = 'en-US-Journey-F'    
+
+     # Create an option box for 2nd voice
+    voice2selected = st.selectbox(
+    'Select voice 2',
+    ('en-US-Journey-D (male)', 'en-US-Journey-F (female)')
+    )
+
+    # Set the value of myvar based on the selected option
+    if voice2selected == 'en-US-Journey-D (male)':
+        voice2 = 'en-US-Journey-D'
+    elif voice2selected == 'en-US-Journey-F (female)':
+        voice2 = 'en-US-Journey-F'
     
     # Submit button
     submit_button = st.form_submit_button(label='Submit')
