@@ -5,8 +5,6 @@ from google.oauth2 import service_account
 from google.cloud import texttospeech
 from pydub import AudioSegment
 
-
-
 with st.container():
     # Logo for the app
     st.image("brainlogo.png",width=100)
@@ -17,6 +15,9 @@ with st.container():
 # Title for the app
 st.title("Generate a Podcast style dialogue")
 
+# Create a button that triggers the info box
+if st.button('How to create formatted input with a LLM'):
+    st.info('This is an info box that appears when you click the button!')
 
 # Create a form with a text area and a submit button
 with st.form(key='text_area_form'):
