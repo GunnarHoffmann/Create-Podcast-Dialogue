@@ -22,13 +22,13 @@ with st.form(key='text_area_form'):
     # Create an option box for 1st voice
     voice1selected = st.selectbox(
     'Select voice 1',
-    ('en-US-Journey-D (US, male)', 'en-US-Journey-F (US, female)'),
+    ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
     )
 
     # Set the value of myvar based on the selected option
-    if voice1selected == 'en-US-Journey-D (US, male)':
+    if voice1selected == 'en-US-Journey-D (male)':
         voice1 = 'en-US-Journey-D'
-    elif voice1selected == 'en-US-Journey-F (US, female)':
+    elif voice1selected == 'en-US-Journey-F (female)':
         voice1 = 'en-US-Journey-F'    
     
     # Submit button
