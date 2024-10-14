@@ -16,8 +16,19 @@ with st.container():
 st.title("Generate a Podcast style dialogue")
 
 # Create a button that triggers the info box
+# Initialize session state for managing the info box visibility
+if 'show_info' not in st.session_state:
+    st.session_state['show_info'] = False
+
+# Button to toggle the info box visibility
 if st.button('How to create formatted input with a LLM'):
+    # Toggle the value of 'show_info' in session state
+    st.session_state['show_info'] = not st.session_state['show_info']
+
+# Display the info box based on the session state
+if st.session_state['show_info']:
     st.info('This is an info box that appears when you click the button!')
+
 
 # Create a form with a text area and a submit button
 with st.form(key='text_area_form'):
