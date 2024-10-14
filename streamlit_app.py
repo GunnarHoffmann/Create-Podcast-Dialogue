@@ -23,7 +23,7 @@ with st.form(key='text_area_form'):
     voice1selected = st.selectbox(
     'Select voice 1',
     ('option 1', 'option 2')
-)
+    )
     
 # Submit button
 submit_button = st.form_submit_button(label='Submit')
