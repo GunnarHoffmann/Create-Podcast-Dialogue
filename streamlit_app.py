@@ -125,12 +125,12 @@ if user_input:
         
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.mp3", "rb") as audio_file:
-            st.write("Full dialogue MP3:")
+            st.write("Full dialogue in MP3 format:")
             st.audio(audio_file.read(), format="audio/mp3")
 
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.wav", "rb") as audio_file:
-            st.write("Full dialogue WAV:")
+            st.write("Full dialogue in WAV format:")
             st.audio(audio_file.read(), format="audio/wav")
             
     
