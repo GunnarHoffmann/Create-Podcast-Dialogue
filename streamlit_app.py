@@ -27,7 +27,7 @@ if st.button('How to create formatted input with a LLM'):
 
 # Display the info box based on the session state
 if st.session_state['show_info']:
-    st.info('This is an info box that appears when you click the button!')
+    st.info('Sample prompt: Create a lively dialogue in podcast style about EON. Use attached file as input. Limit the output to maximum 50 lines. Create output as text array, each array entry equals to contribution of a speaker. Only two hosts shall discuss about the input. Do not add information about who is speaking, just add statements to array. Please introduce the members of the board of EON at the beginning. ')
 
 
 # Create a form with a text area and a submit button
