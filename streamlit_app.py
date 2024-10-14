@@ -67,7 +67,7 @@ with st.form(key='text_area_form'):
         voice2 = 'en-US-Journey-F'
     
     # Submit button
-    submit_button = st.form_submit_button(label='Submit')
+    submit_button = st.form_submit_button(label='Generate audio output')
 
 credentials_json = st.secrets["mykey"]
 # st.write(credentials_json)
