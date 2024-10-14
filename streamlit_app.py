@@ -121,7 +121,7 @@ if user_input:
     
         #convert to m4a
         audio = AudioSegment.from_mp3("combined_output.mp3")
-        audio.export("combined_output.m4a", format="ipod")
+        audio.export("combined_output.wav", format="wav")
         
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.mp3", "rb") as audio_file:
@@ -129,9 +129,9 @@ if user_input:
             st.audio(audio_file.read(), format="audio/mp3")
 
         # After saving the audio file "combined_output.mp3"
-        with open("combined_output.m4a", "rb") as audio_file:
-            st.write("Full dialogue M4a:")
-            st.audio(audio_file.read(), format="audio/mpeg")
+        with open("combined_output.wav", "rb") as audio_file:
+            st.write("Full dialogue WAV:")
+            st.audio(audio_file.read(), format="audio/wav")
             
     
     except:
