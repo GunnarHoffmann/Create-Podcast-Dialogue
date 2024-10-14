@@ -119,10 +119,20 @@ if user_input:
         output_combined_file = "combined_output.mp3"
         concatenate_audios(audio_files, output_combined_file)
     
+        #convert to m4a
+        audio = AudioSegment.from_mp3("combined_output.mp3")
+        audio.export("combined_output.m4a", format="mpeg")
+        
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.mp3", "rb") as audio_file:
             st.write("Full dialogue:")
+            st.audio(audio_file.read(), format="audio/mp3")
+
+        # After saving the audio file "combined_output.mp3"
+        with open("combined_output.m4a", "rb") as audio_file:
+            st.write("Full dialogue:")
             st.audio(audio_file.read(), format="audio/mpeg")
+            
     
     except:
         st.write('Error decoding input. Please use format as follows:')
