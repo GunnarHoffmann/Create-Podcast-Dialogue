@@ -67,7 +67,7 @@ with st.form(key='text_area_form'):
         voice2 = 'en-US-Journey-F'
     
     # Submit button
-    submit_button = st.form_submit_button(label='Generate audio output using European Google TTS API')
+    submit_button = st.form_submit_button(label='Generate audio output using European Google TTS API endpoint')
 
 credentials_json = st.secrets["mykey"]
 # st.write(credentials_json)
