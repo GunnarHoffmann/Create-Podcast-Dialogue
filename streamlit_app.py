@@ -33,7 +33,7 @@ if st.session_state['show_info']:
 # Create a form with a text area and a submit button
 with st.form(key='text_area_form'):
     user_input = st.text_area("Text input:", '''[
-    "Hum, Have you seen the latest reports on Eon's fiscal year 2023?", 
+    "Hm, Have you seen the latest reports on Eon's fiscal year 2023?", 
     "Yes, the numbers are impressive! Revenue has increased by 15%.",   
     "Exactly, and that's mainly due to rising revenues from renewable energies.",  
     "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
