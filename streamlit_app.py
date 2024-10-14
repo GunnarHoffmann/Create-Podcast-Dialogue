@@ -9,9 +9,8 @@ with st.container():
     # Logo for the app
     st.image("brainlogo.png",width=100)
     # Add small text below the image
-    st.markdown("<p style='text-align: center; font-size: 12px;'>Powered by BRAIN Data Platform</p>", unsafe_allow_html=True)
-
-
+    #st.markdown("<p style='text-align: center; font-size: 12px;'>Powered by BRAIN Data Platform</p>", unsafe_allow_html=True)
+    st.write("huhu")
 # Title for the app
 st.title("Generate a Podcast style dialogue")
 
