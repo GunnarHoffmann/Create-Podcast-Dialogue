@@ -121,7 +121,7 @@ if user_input:
     
         #convert to m4a
         audio = AudioSegment.from_mp3("combined_output.mp3")
-        audio.export("combined_output.m4a", format="mpeg")
+        audio.export("combined_output.m4a", format="ipod")
         
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.mp3", "rb") as audio_file:
