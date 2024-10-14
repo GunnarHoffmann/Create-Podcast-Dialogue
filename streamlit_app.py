@@ -28,12 +28,6 @@ with st.form(key='text_area_form'):
 # Submit button
 submit_button = st.form_submit_button(label='Submit')
 
-# Create an option box for 2nd voice
-voice2selected = st.selectbox(
-    'Select voice 2',
-    ('option 1', 'option 2')
-)
-
 # Define the speaker voices (you can use different voices for different speakers)
 voice1 = "en-US-Journey-D"
 voice2 = "en-US-Journey-F"
