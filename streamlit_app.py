@@ -122,7 +122,7 @@ if user_input:
         # After saving the audio file "combined_output.mp3"
         with open("combined_output.mp3", "rb") as audio_file:
             st.write("Full dialogue:")
-            st.audio(audio_file.read(), format="audio/mp3")
+            st.audio(audio_file.read(), format="audio/mpeg")
     
     except:
         st.write('Error decoding input. Please use format as follows:')
