@@ -23,6 +23,7 @@ with st.form(key='text_area_form'):
     voice1selected = st.selectbox(
     'Select voice 1',
     ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+    index=0
     )
 
     # Set the value of myvar based on the selected option
@@ -34,7 +35,8 @@ with st.form(key='text_area_form'):
      # Create an option box for 2nd voice
     voice2selected = st.selectbox(
     'Select voice 2',
-    ('en-US-Journey-D (male)', 'en-US-Journey-F (female)')
+    ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+    index=1
     )
 
     # Set the value of myvar based on the selected option
