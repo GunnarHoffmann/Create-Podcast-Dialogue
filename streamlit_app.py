@@ -5,10 +5,11 @@ from google.oauth2 import service_account
 from google.cloud import texttospeech
 from pydub import AudioSegment
 
-# Logo for the app
-st.image("brainlogo.png",width=100)
-# Add small text below the image
-st.markdown("<p style='text-align: center; font-size: 12px;'>Powered by BRAIN Data Platform</p>", unsafe_allow_html=True)
+with st.container():
+    # Logo for the app
+    st.image("brainlogo.png",width=100)
+    # Add small text below the image
+    st.markdown("<p style='text-align: center; font-size: 12px;'>Powered by BRAIN Data Platform</p>", unsafe_allow_html=True)
 
 
 # Title for the app
