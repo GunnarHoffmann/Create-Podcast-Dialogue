@@ -78,8 +78,13 @@ credentials = service_account.Credentials.from_service_account_info(credentials_
 # Print loaded credentials to debug
 # st.write(f"Using credentials from: {mykey}")
 
+# Specify the European region endpoint
+client_options = {
+    'api_endpoint': 'eu-texttospeech.googleapis.com:443'
+}
+
 # Initialize Text-to-Speech client with the loaded credentials
-client = texttospeech.TextToSpeechClient(credentials=credentials)
+client = texttospeech.TextToSpeechClient(credentials=credentials,client_options = client_options)
 
 # Define the text inputs in an array
 texts = [
