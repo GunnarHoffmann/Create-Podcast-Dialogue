@@ -18,6 +18,12 @@ with st.form(key='text_area_form'):
     "That's really exciting! Eon seems to be adapting well to the shift towards green energy.",  
     "Absolutely, I'm curious to see how this will develop in the coming years!"   
 ]''', height=200)
+
+    # Create an option box for 1st voice
+    voice1selected = st.selectbox(
+    'Select voice 1',
+    ('option 1', 'option 2')
+)
     
 # Submit button
 submit_button = st.form_submit_button(label='Submit')
