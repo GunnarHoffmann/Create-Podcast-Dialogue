@@ -191,11 +191,11 @@ if user_input:
     # st.write(audio_files)
 
     # Debug information
-    # from pydub.utils import which
-    # if which("ffmpeg") is not None:
-    #    st.write("ffmpeg is installed.")
-    # else:
-    #    st.write("ffmpeg is not installed or not in PATH.")
+from pydub.utils import which
+if which("ffmpeg") is not None:
+  st.write("ffmpeg is installed.")
+else:
+  st.write("ffmpeg is not installed or not in PATH.")
 
 impressum_html = """
     <style>
