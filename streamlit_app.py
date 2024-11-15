@@ -29,7 +29,7 @@ with tabs[0]:
 with tabs[1]:
     st.header("Configure TTS Engine")
     # Add a radio button to select between Google TTS and ElevenLabs TTS
-    tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"), key='tts_engine_selection')
+    tts_engine = st.radio("Select TTS Engine", ("ElevenLabs TTS", "Google TTS"), key='tts_engine_selection', index=0)
 
     # Depending on the selected TTS engine, provide different voice options
     if tts_engine == "Google TTS":
