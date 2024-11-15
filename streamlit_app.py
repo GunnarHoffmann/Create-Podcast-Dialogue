@@ -29,15 +29,6 @@ with tabs[0]:
 
 with tabs[1]:
     st.header("Configure TTS Engine")
-    st.write("Configure your Text-to-Speech engine settings here.")
-    api_endpoint = st.text_input("API Endpoint", value='eu-texttospeech.googleapis.com:443')
-    language_code = st.text_input("Language Code", value='en-US')
-    gender = st.selectbox("Select SSML Voice Gender", options=['NEUTRAL', 'MALE', 'FEMALE'], index=0)
-
-    # Update client options based on user input
-    client_options = {
-        'api_endpoint': api_endpoint
-    }
 
 with tabs[2]:
     st.header("Generate Output")
