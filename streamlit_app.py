@@ -58,7 +58,7 @@ with tabs[1]:
             voice1selected = st.selectbox('Select voice 1', voice_names, index=0)
             voice2selected = st.selectbox('Select voice 2', voice_names, index=1)
         else:
-            st.error("Failed to fetch voices from ElevenLabs. Please check your API key and connection.")
+            st.error(f"Failed to fetch voices from ElevenLabs. Please check your API key and connection.{response}")
     # Add a radio button to select between Google TTS and ElevenLabs TTS
     tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"))
 
