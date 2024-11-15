@@ -21,11 +21,10 @@ with tabs[0]:
         if uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
             text = docx2txt.process(uploaded_file)
             st.write("File uploaded successfully.")
-            st.write(text)
         elif uploaded_file.type == "text/plain":
             text = uploaded_file.read().decode("utf-8")
             st.write("File uploaded successfully.")
-            st.write(text)
+        st.text_area("File Content:", text, height=200, disabled=True)
 
 with tabs[1]:
     st.header("Configure TTS Engine")
