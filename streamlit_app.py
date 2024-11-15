@@ -24,7 +24,7 @@ with tabs[0]:
         elif uploaded_file.type == "text/plain":
             text = uploaded_file.read().decode("utf-8")
             st.write("File uploaded successfully.")
-        st.text_area("File Content:", text, height=200, disabled=True)
+        st.text_area("File Content:", text, height=200, readonly=True)
 
 with tabs[1]:
     st.header("Configure TTS Engine")
