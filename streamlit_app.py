@@ -28,6 +28,32 @@ with tabs[0]:
 
 with tabs[1]:
     st.header("Configure TTS Engine")
+    # Add a radio button to select between Google TTS and ElevenLabs TTS
+    tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"))
+
+    # Depending on the selected TTS engine, provide different voice options
+    if tts_engine == "Google TTS":
+        voice1selected = st.selectbox(
+            'Select voice 1',
+            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+            index=0
+        )
+        voice2selected = st.selectbox(
+            'Select voice 2',
+            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+            index=1
+        )
+    elif tts_engine == "ElevenLabs TTS":
+        voice1selected = st.selectbox(
+            'Select voice 1',
+            ('Rachel (female)', 'Antoni (male)'),
+            index=0
+        )
+        voice2selected = st.selectbox(
+            'Select voice 2',
+            ('Rachel (female)', 'Antoni (male)'),
+            index=1
+        )
 
 with tabs[2]:
     st.header("Generate Output")
@@ -63,7 +89,7 @@ with tabs[2]:
         )
 
         # Set the value of myvar based on the selected option
-        if voice1selected == 'en-US-Journey-D (male)':
+        if voice1selected == 'en-US-Journey-D (male)' or voice1selected == 'Rachel (female)' or voice1selected == 'Antoni (male)':
             voice1 = 'en-US-Journey-D'
         elif voice1selected == 'en-US-Journey-F (female)':
             voice1 = 'en-US-Journey-F'    
@@ -76,7 +102,7 @@ with tabs[2]:
         )
 
         # Set the value of myvar based on the selected option
-        if voice2selected == 'en-US-Journey-D (male)':
+        if voice2selected == 'en-US-Journey-D (male)' or voice2selected == 'Rachel (female)' or voice2selected == 'Antoni (male)':
             voice2 = 'en-US-Journey-D'
         elif voice2selected == 'en-US-Journey-F (female)':
             voice2 = 'en-US-Journey-F'
