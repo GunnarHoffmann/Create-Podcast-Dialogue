@@ -16,10 +16,10 @@ tabs = st.tabs(["Upload Input", "Configure TTS Engine", "Generate Audio"])
 
 with tabs[0]:
     st.header("Upload Input")
-    st.info("""ℹ️ The word document should contain a dialogue format that clearly distinguishes between speakers. For example: Emma: Hey, did you finish the report for the meeting?
-James: Not yet. I’m still working on the charts. What about you?
-Emma: I wrapped it up last night. Want me to take a look at yours?
-James: That’d be great. I’m stuck on the sales data comparison.""")
+    st.info("""ℹ️ The word document should contain a dialogue format that clearly distinguishes between speakers. For example: \n\n- Emma: Hey, did you finish the report for the meeting?
+\n- James: Not yet. I’m still working on the charts. What about you?
+\n- Emma: I wrapped it up last night. Want me to take a look at yours?
+\n- James: That’d be great. I’m stuck on the sales data comparison.""")
     uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx"])
     if uploaded_file is not None:
         if uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
