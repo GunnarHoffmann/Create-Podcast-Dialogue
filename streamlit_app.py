@@ -48,7 +48,7 @@ with tabs[1]:
         import requests
 
         elevenlabs_api_key = st.secrets["elevenlabs_api_key"]
-        headers = {"Authorization": f"Bearer {elevenlabs_api_key}"}
+        headers = {"xi-api-key": elevenlabs_api_key}
         response = requests.get("https://api.elevenlabs.io/v1/voices", headers=headers)
 
         if response.status_code == 200:
@@ -58,9 +58,8 @@ with tabs[1]:
             voice1selected = st.selectbox('Select voice 1', voice_names, index=0)
             voice2selected = st.selectbox('Select voice 2', voice_names, index=1)
         else:
-            st.error(f"Failed to fetch voices from ElevenLabs. Please check your API key and connection.{response}")
-    # Add a radio button to select between Google TTS and ElevenLabs TTS
-    tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"))
+            st.error("Failed to fetch voices from ElevenLabs. Please check your API key and connection.")
+  
 
 with tabs[2]:
     st.header("Generate Output")
