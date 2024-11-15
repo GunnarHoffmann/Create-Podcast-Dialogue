@@ -4,6 +4,7 @@ import os
 from google.oauth2 import service_account
 from google.cloud import texttospeech
 from pydub import AudioSegment
+import docx2txt
 
 st.image("brainlogo.png", width=100)
 st.write("Powered by BRAIN Data Platform")
@@ -11,13 +12,20 @@ st.write("Powered by BRAIN Data Platform")
 st.title("Generate a Podcast style dialogue")
 
 # Define tabs
-tabs = st.tabs(["Upload Input", "Generate Output"])
+tabs = st.tabs(["Upload Input", "Generate Output", "Configure TTS Engine"])
 
 with tabs[0]:
     st.header("Upload Input")
-    uploaded_file = st.file_uploader("Choose a file")
+    uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx"])
     if uploaded_file is not None:
-        st.write("File uploaded successfully.")
+        if uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+            text = docx2txt.process(uploaded_file)
+            st.write("File uploaded successfully.")
+            st.write(text)
+        elif uploaded_file.type == "text/plain":
+            text = uploaded_file.read().decode("utf-8")
+            st.write("File uploaded successfully.")
+            st.write(text)
 
 with tabs[1]:
     st.header("Generate Output")
@@ -201,6 +209,16 @@ with tabs[1]:
       st.write("ffmpeg is installed.")
     else:
       st.write("ffmpeg is not installed or not in PATH.")
+
+with tabs[2]:
+    st.header("Configure TTS Engine")
+    st.write("Configure your Text-to-Speech engine settings here.")
+    api_endpoint = st.text_input("API Endpoint", value='eu-texttospeech.googleapis.com:443')
+    language_code = st.text_input("Language Code", value='en-US')
+    gender = st.selectbox("Select SSML Voice Gender", options=['NEUTRAL', 'MALE', 'FEMALE'], index=0)
+
+    # Update client options based on user input
+    client_options['api_endpoint'] = api_endpoint
 
 impressum_html = """
     <style>
