@@ -62,30 +62,6 @@ with tabs[1]:
     # Add a radio button to select between Google TTS and ElevenLabs TTS
     tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"))
 
-    # Depending on the selected TTS engine, provide different voice options
-    if tts_engine == "Google TTS":
-        voice1selected = st.selectbox(
-            'Select voice 1',
-            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
-            index=0
-        )
-        voice2selected = st.selectbox(
-            'Select voice 2',
-            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
-            index=1
-        )
-    elif tts_engine == "ElevenLabs TTS":
-        voice1selected = st.selectbox(
-            'Select voice 1',
-            ('Rachel (female)', 'Antoni (male)'),
-            index=0
-        )
-        voice2selected = st.selectbox(
-            'Select voice 2',
-            ('Rachel (female)', 'Antoni (male)'),
-            index=1
-        )
-
 with tabs[2]:
     st.header("Generate Output")
     # Create a button that triggers the info box
