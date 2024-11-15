@@ -12,7 +12,7 @@ st.write("Powered by BRAIN Data Platform")
 st.title("Generate a Podcast style dialogue")
 
 # Define tabs
-tabs = st.tabs(["Upload Input", "Generate Output", "Configure TTS Engine"])
+tabs = st.tabs(["Upload Input", "Configure TTS Engine", "Generate Output"])
 
 with tabs[0]:
     st.header("Upload Input")
@@ -28,6 +28,18 @@ with tabs[0]:
             st.write(text)
 
 with tabs[1]:
+    st.header("Configure TTS Engine")
+    st.write("Configure your Text-to-Speech engine settings here.")
+    api_endpoint = st.text_input("API Endpoint", value='eu-texttospeech.googleapis.com:443')
+    language_code = st.text_input("Language Code", value='en-US')
+    gender = st.selectbox("Select SSML Voice Gender", options=['NEUTRAL', 'MALE', 'FEMALE'], index=0)
+
+    # Update client options based on user input
+    client_options = {
+        'api_endpoint': api_endpoint
+    }
+
+with tabs[2]:
     st.header("Generate Output")
     # Create a button that triggers the info box
     # Initialize session state for managing the info box visibility
@@ -209,16 +221,6 @@ with tabs[1]:
       st.write("ffmpeg is installed.")
     else:
       st.write("ffmpeg is not installed or not in PATH.")
-
-with tabs[2]:
-    st.header("Configure TTS Engine")
-    st.write("Configure your Text-to-Speech engine settings here.")
-    api_endpoint = st.text_input("API Endpoint", value='eu-texttospeech.googleapis.com:443')
-    language_code = st.text_input("Language Code", value='en-US')
-    gender = st.selectbox("Select SSML Voice Gender", options=['NEUTRAL', 'MALE', 'FEMALE'], index=0)
-
-    # Update client options based on user input
-    client_options['api_endpoint'] = api_endpoint
 
 impressum_html = """
     <style>
