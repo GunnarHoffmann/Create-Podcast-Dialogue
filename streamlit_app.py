@@ -44,6 +44,37 @@ with tabs[1]:
             index=1
         )
     elif tts_engine == "ElevenLabs TTS":
+        # Fetch available voices from ElevenLabs API
+        import requests
+
+        elevenlabs_api_key = st.secrets["elevenlabs_api_key"]
+        headers = {"Authorization": f"Bearer {elevenlabs_api_key}"}
+        response = requests.get("https://api.elevenlabs.io/v1/voices", headers=headers)
+
+        if response.status_code == 200:
+            voices = response.json()["voices"]
+            voice_names = [voice["name"] for voice in voices]
+            
+            voice1selected = st.selectbox('Select voice 1', voice_names, index=0)
+            voice2selected = st.selectbox('Select voice 2', voice_names, index=1)
+        else:
+            st.error("Failed to fetch voices from ElevenLabs. Please check your API key and connection.")
+    # Add a radio button to select between Google TTS and ElevenLabs TTS
+    tts_engine = st.radio("Select TTS Engine", ("Google TTS", "ElevenLabs TTS"))
+
+    # Depending on the selected TTS engine, provide different voice options
+    if tts_engine == "Google TTS":
+        voice1selected = st.selectbox(
+            'Select voice 1',
+            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+            index=0
+        )
+        voice2selected = st.selectbox(
+            'Select voice 2',
+            ('en-US-Journey-D (male)', 'en-US-Journey-F (female)'),
+            index=1
+        )
+    elif tts_engine == "ElevenLabs TTS":
         voice1selected = st.selectbox(
             'Select voice 1',
             ('Rachel (female)', 'Antoni (male)'),
