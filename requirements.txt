@@ -2,3 +2,4 @@ streamlit
 google-cloud-texttospeech
 pydub
 google-auth
+docx2txt
