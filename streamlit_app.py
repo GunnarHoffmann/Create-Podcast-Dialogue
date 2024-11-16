@@ -154,9 +154,11 @@ with tabs[2]:
                 output_filename = f"output_speaker_{index}.mp3"
                 if tts_engine == "Google TTS":
                     if index % 2 == 0:
+                        st.write("before google tts")
                         synthesize_text_google(text, voice1selected, output_filename)
                         st.write("called google tts")
                     else:
+                        st.write("before google tts")
                         synthesize_text_google(text, voice2selected, output_filename)
                         st.write("called google tts")
                 elif tts_engine == "ElevenLabs TTS":
