@@ -155,8 +155,10 @@ with tabs[2]:
                 if tts_engine == "Google TTS":
                     if index % 2 == 0:
                         synthesize_text_google(text, voice1selected, output_filename)
+                        st.write("called google tts")
                     else:
                         synthesize_text_google(text, voice2selected, output_filename)
+                        st.write("called google tts")
                 elif tts_engine == "ElevenLabs TTS":
                     voice_id = voice1selected if index % 2 == 0 else voice2selected
                     synthesize_text_elevenlabs(text, voice_id, output_filename)
