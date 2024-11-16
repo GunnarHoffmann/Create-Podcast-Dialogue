@@ -103,10 +103,16 @@ with tabs[2]:
     audio_files = []
 
     def synthesize_text_google(text, speaker_name, output_filename):
+        # Set the value of voice based on the selected option
+        if speaker_name == 'en-US-Journey-D (male)':
+            voice_name = 'en-US-Journey-D'
+        elif speaker_name == 'en-US-Journey-F (female)':
+            voice_name = 'en-US-Journey-F'
+
         input_text = texttospeech.SynthesisInput(text=text)
         voice = texttospeech.VoiceSelectionParams(
             language_code="en-US",
-            name=speaker_name,
+            name=voice_name,
             ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL
         )
         audio_config = texttospeech.AudioConfig(
@@ -149,18 +155,13 @@ with tabs[2]:
     if 'user_input' in locals() and user_input:
         try:
             inputarray = json.loads(user_input)
-            st.write(inputarray)
             for index, text in enumerate(inputarray):
                 output_filename = f"output_speaker_{index}.mp3"
                 if tts_engine == "Google TTS":
                     if index % 2 == 0:
-                        st.write("before google tts")
                         synthesize_text_google(text, voice1selected, output_filename)
-                        st.write("called google tts")
                     else:
-                        st.write("before google tts")
                         synthesize_text_google(text, voice2selected, output_filename)
-                        st.write("called google tts")
                 elif tts_engine == "ElevenLabs TTS":
                     voice_id = voice1selected if index % 2 == 0 else voice2selected
                     synthesize_text_elevenlabs(text, voice_id, output_filename)
