@@ -149,6 +149,7 @@ with tabs[2]:
     if 'user_input' in locals() and user_input:
         try:
             inputarray = json.loads(user_input)
+            st.write(inputarray)
             for index, text in enumerate(inputarray):
                 output_filename = f"output_speaker_{index}.mp3"
                 if tts_engine == "Google TTS":
