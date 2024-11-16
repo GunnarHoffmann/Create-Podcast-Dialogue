@@ -181,6 +181,7 @@ with tabs[2]:
             st.write('["Statement 1, Speaker 1", "Statement 1, Speaker 2", "Statement 2, Speaker 1", "Statement 2, Speaker 2"]')
 
     from pydub.utils import which
+    # Check if ffmpeg is installed
     if which("ffmpeg") is not None:
         st.write("ffmpeg is installed.")
     else:
