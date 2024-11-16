@@ -68,6 +68,10 @@ with tabs[1]:
 with tabs[2]:
     st.header("Generate Audio")
 
+    # Add info box
+    st.info("""ℹ️ Podcasts can be created using two approaches. You can provide a pre-written script, and the podcast will be developed based on your content. Alternatively, you can share a prompt, and an advanced language learning model (LLM) will generate the script for you.""")
+
+  
     # Add radio buttons to select between script-based or LLM prompt-based audio creation
     audio_creation_method = st.radio("Select Audio Creation Method", ("Audio creation based on script", "Audio creation based on LLM prompt"), index=0)
 
@@ -89,6 +93,7 @@ with tabs[2]:
         user_input = st.text_area("LLM Prompt:", "Create BLA BLA ...", height=200)
         submit_button = st.button(label='Generate audio output using European Google TTS API endpoint')
 
+  
     credentials_json = st.secrets["mykey"]
     # st.write(credentials_json)
     # Convert the string into a file-like object
