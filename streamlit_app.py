@@ -180,9 +180,9 @@ with tabs[2]:
             st.write('Error decoding input. Please use format as follows:')
             st.write('["Statement 1, Speaker 1", "Statement 1, Speaker 2", "Statement 2, Speaker 1", "Statement 2, Speaker 2"]')
 
-    from pydub.utils import which
+    # from pydub.utils import which
     # Check if ffmpeg is installed
-    if which("ffmpeg") is not None:
-        st.write("ffmpeg is installed.")
-    else:
-        st.write("ffmpeg is not installed or not in PATH.")
+    #if which("ffmpeg") is not None:
+    #    st.write("ffmpeg is installed.")
+    #else:
+    #    st.write("ffmpeg is not installed or not in PATH.")
