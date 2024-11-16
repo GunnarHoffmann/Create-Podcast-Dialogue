@@ -71,7 +71,7 @@ with tabs[2]:
     # Add radio buttons to select between script-based or LLM prompt-based audio creation
     audio_creation_method = st.radio("Select Audio Creation Method", ("Audio creation based on script", "Audio creation based on LLM prompt"), index=0)
 
-    if 'uploaded_file' in locals() and uploaded_file is not None:
+    if audio_creation_method == "Audio creation based on script" and 'uploaded_file' in locals() and uploaded_file is not None:
             # Create a form with a text area and a submit button
             with st.form(key='text_area_form'):
                 user_input = st.text_area("Text input:", '''[
@@ -162,7 +162,7 @@ with tabs[2]:
         print(f"Combined audio saved as {output_file}")
 
     # Processing the input by concatenating "_END"
-    if user_input:
+    if 'user_input' in locals() and user_input:
         # Iterate through the text array and synthesize audio based on index
         try:
             inputarray = json.loads(user_input)    
