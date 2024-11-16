@@ -166,54 +166,54 @@ with tabs[2]:
         combined_audio.export(output_file, format="mp3")
         print(f"Combined audio saved as {output_file}")
 
-    # Processing the input by concatenating "_END"
-    if 'user_input' in locals() and user_input:
-        # Iterate through the text array and synthesize audio based on index
-        try:
-            inputarray = json.loads(user_input)    
-            for index, text in enumerate(inputarray):
-                if index % 2 == 0:
-                    # Even index, use Speaker 1
-                    output_filename = f"output_speaker1_{index}.mp3"
-                    synthesize_text(text, voice1selected, output_filename)
-                else:
-                    # Odd index, use Speaker 2
-                    output_filename = f"output_speaker2_{index}.mp3"
-                    synthesize_text(text, voice2selected, output_filename)
-                
-                # Add each generated file to the list for concatenation
-                audio_files.append(output_filename)
-        
-            # Concatenate all the generated audio files
-            output_combined_file = "combined_output.mp3"
-            concatenate_audios(audio_files, output_combined_file)
-        
-            #convert to m4a
-            audio = AudioSegment.from_mp3("combined_output.mp3")
-            audio.export("combined_output.wav", format="wav")
+        # Processing the input by concatenating "_END"
+        if 'user_input' in locals() and user_input:
+            # Iterate through the text array and synthesize audio based on index
+            try:
+                inputarray = json.loads(user_input)    
+                for index, text in enumerate(inputarray):
+                    if index % 2 == 0:
+                        # Even index, use Speaker 1
+                        output_filename = f"output_speaker1_{index}.mp3"
+                        synthesize_text(text, voice1selected, output_filename)
+                    else:
+                        # Odd index, use Speaker 2
+                        output_filename = f"output_speaker2_{index}.mp3"
+                        synthesize_text(text, voice2selected, output_filename)
+                    
+                    # Add each generated file to the list for concatenation
+                    audio_files.append(output_filename)
             
-            # After saving the audio file "combined_output.mp3"
-            with open("combined_output.mp3", "rb") as audio_file:
-                st.write("Full dialogue in MP3 format:")
-                st.audio(audio_file.read(), format="audio/mp3")
-
-            # After saving the audio file "combined_output.mp3"
-            with open("combined_output.wav", "rb") as audio_file:
-                st.write("Full dialogue in WAV format:")
-                st.audio(audio_file.read(), format="audio/wav")
+                # Concatenate all the generated audio files
+                output_combined_file = "combined_output.mp3"
+                concatenate_audios(audio_files, output_combined_file)
+            
+                #convert to m4a
+                audio = AudioSegment.from_mp3("combined_output.mp3")
+                audio.export("combined_output.wav", format="wav")
                 
-        
-        except:
-            st.write('Error decoding input. Please use format as follows:')
-            st.write('["Statement 1, Speaker 1", "Statement 1, Speaker 2", "Statement 2, Speaker 1", "Statement 2, Speaker 2"]')
-
-        
-        # Debug: generated files
-        # st.write(audio_files)
-
-        # Debug information
-    from pydub.utils import which
-    if which("ffmpeg") is not None:
-      st.write("ffmpeg is installed.")
-    else:
-      st.write("ffmpeg is not installed or not in PATH.")
+                # After saving the audio file "combined_output.mp3"
+                with open("combined_output.mp3", "rb") as audio_file:
+                    st.write("Full dialogue in MP3 format:")
+                    st.audio(audio_file.read(), format="audio/mp3")
+    
+                # After saving the audio file "combined_output.mp3"
+                with open("combined_output.wav", "rb") as audio_file:
+                    st.write("Full dialogue in WAV format:")
+                    st.audio(audio_file.read(), format="audio/wav")
+                    
+            
+            except:
+                st.write('Error decoding input. Please use format as follows:')
+                st.write('["Statement 1, Speaker 1", "Statement 1, Speaker 2", "Statement 2, Speaker 1", "Statement 2, Speaker 2"]')
+    
+            
+            # Debug: generated files
+            # st.write(audio_files)
+    
+            # Debug information
+        from pydub.utils import which
+        if which("ffmpeg") is not None:
+          st.write("ffmpeg is installed.")
+        else:
+          st.write("ffmpeg is not installed or not in PATH.")
